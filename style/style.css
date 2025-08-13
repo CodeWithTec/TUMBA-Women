@@ -1318,3 +1318,77 @@
         padding: 10px 20px;
       }
     }
+
+    /* Leadership styling */
+        .leadership-hero {
+            /* background: linear-gradient(135deg, #49e22b 0%, #1e7e34 100%); */
+            padding-top: 120px;
+            text-align: center;
+        }
+        .leadership-hero h1{
+          color: #1e7e34;
+          font-weight: bold;
+        }
+        .leader-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        
+        .leader-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+        
+        .leader-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ffffff, #ffffff);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 20px;
+            border: 5px solid #1e7e34;
+        }
+        
+        .leader-name {
+            color: #1e7e34;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .leader-position {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .leader-info {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .section-title {
+            color: #1e7e34;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+/*Leadership media Query */
+@media only screen and (max-width: 768px) {
+  .leader-card {
+    width: 100%;
+    margin: 0 auto;
+    }
+    .leader-avatar {
+      width: 80px;
+      height: 80px;
+    }
+  }
