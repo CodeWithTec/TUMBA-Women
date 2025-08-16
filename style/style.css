@@ -1431,6 +1431,102 @@
     background: rgba(0, 0, 0, 0.5);
 }
 
+.popup3{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup4{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup5{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup6{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup7{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup8{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup9{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup10{
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; 
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.5);
+}
+
 .pop-up-head{
   position: sticky;
 }
