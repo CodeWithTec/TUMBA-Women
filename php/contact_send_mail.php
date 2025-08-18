@@ -11,6 +11,7 @@ require 'PHPMailer/src/Exception.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name    = htmlspecialchars($_POST['name']);
     $email   = htmlspecialchars($_POST['email']);
+    $subject = htmlspecialchars($_POST['subject']);
     $message = htmlspecialchars($_POST['message']);
 
     $mail = new PHPMailer(true);
@@ -20,14 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'yourgmail@gmail.com'; // Your Gmail
-        $mail->Password   = 'your-app-password';   // Gmail App Password
+        $mail->Username   = 'tumbawomencooperative@gmail.com'; // Your Gmail
+        $mail->Password   = 'kaer njwt mcoh dmoq';   // Gmail App Password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587;
 
         // Sender and recipient
         $mail->setFrom('yourgmail@gmail.com', 'Website Contact Form');
-        $mail->addAddress('you@example.com'); // Recipient email
+        $mail->addAddress('tumbawomencooperative@gmail.com'); // Recipient email
 
         // Attach all uploaded files
         if (!empty($_FILES['attachments']['name'][0])) {
