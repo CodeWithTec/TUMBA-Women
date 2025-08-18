@@ -31,31 +31,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->addAddress('tumbawomencooperative@gmail.com'); // Recipient email
 
         // Attach all uploaded files
-        if (!empty($_FILES['attachments']['name'][0])) {
-            for ($i = 0; $i < count($_FILES['attachments']['name']); $i++) {
-                if ($_FILES['attachments']['error'][$i] === UPLOAD_ERR_OK) {
-                    $mail->addAttachment(
-                        $_FILES['attachments']['tmp_name'][$i],
-                        $_FILES['attachments']['name'][$i]
-                    );
-                }
-            }
-        }
-
+        if (isset($_FILES['attachment']) && $_FILES['attachment']['error'] == 0) {
+    $mail->addAttachment($_FILES['attachment']['tmp_name'], $_FILES['attachment']['name']);
+} else {
+    echo "⚠️ File not uploaded. Error code: " . $_FILES['attachment']['error'];
+}
+       
         // Email content
         $mail->isHTML(true);
         $mail->Subject = "New Contact Form Submission";
         $mail->Body    = "
             <h3>New Message from <br>$name</h3>
-            <h3>Subject of the Mail:<br>$subject</h3>
+            <h3>Subject: $subject</h3>
             <p><strong>Email:</strong> $email</p>
             <p><strong>Message:</strong><br>$message</p>
         ";
 
         // Send email
         $mail->send();
+
+        // echo "thanks for the mail";
         // Reirect after success 
-        header("Location: /successfully.html");
+        header("Location: ../successfully.html");
     } catch (Exception $e) {
         echo "Message could not be sent. Error: {$mail->ErrorInfo}";
     }

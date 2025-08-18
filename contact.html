@@ -65,22 +65,27 @@
         </div>
         <div class="row g-4">
             <div class="col-md-6">
-                <form class="contact-form" action="php/contact_send_mail.php" method="POST">
-                    <div class="mb-3">
+                <form class="contact-form" action="php/contact_send_mail.php" method="POST" enctype="multipart/form-data">
+                    <div class="mb-2">
                         <label for="name" class="form-label">Your Name</label>
-                        <input type="text" class="form-control" id="name" name="name" required>
+                        <input type="text" class="form-control py-2" id="name" name="name" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <label for="email" class="form-label">Your Email</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
+                        <input type="email" class="form-control py-2" id="email" name="email" required>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <label for="subject" class="form-label">Subject</label>
-                        <input type="text" class="form-control" id="subject" name="subject">
+                        <input type="text" class="form-control py-2" id="subject" name="subject">
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-2">
                         <label for="message" class="form-label">Message</label>
                         <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <div class="mb-2">
+                      <label for="file-attached">
+                        <input type="file" name="attachment" id="file-attached" rows="5" class="form-control">
+                      </label>
                     </div>
                     <button type="submit" class="btn btn-success">Send Message</button>
                 </form>
