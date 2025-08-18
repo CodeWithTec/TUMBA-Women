@@ -9,7 +9,7 @@ require '../PHPMailer/src/SMTP.php';
 require '../PHPMailer/src/Exception.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name    = htmlspecialchars($_POST['name']);
+    $name    = htmlspecialchars($_POST['name']); 
     $email   = htmlspecialchars($_POST['email']);
     $subject = htmlspecialchars($_POST['subject']);
     $message = htmlspecialchars($_POST['message']);
@@ -54,7 +54,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Send email
         $mail->send();
-        echo "Message sent successfully with attachments!"; 
+        // Reirect after success 
+        header("Location: /successfully.html");
     } catch (Exception $e) {
         echo "Message could not be sent. Error: {$mail->ErrorInfo}";
     }
