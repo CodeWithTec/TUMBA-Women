@@ -4,9 +4,9 @@ use PHPMailer\PHPMailer\Exception;
 
 // require 'vendor/autoload.php'; // If using Composer
 // OR if using manual PHPMailer download:
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-require 'PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
+require '../PHPMailer/src/Exception.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name    = htmlspecialchars($_POST['name']);
@@ -46,14 +46,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isHTML(true);
         $mail->Subject = "New Contact Form Submission";
         $mail->Body    = "
-            <h3>New Message from $name</h3>
+            <h3>New Message from <br>$name</h3>
+            <h3>Subject of the Mail:<br>$subject</h3>
             <p><strong>Email:</strong> $email</p>
             <p><strong>Message:</strong><br>$message</p>
         ";
 
         // Send email
         $mail->send();
-        echo "Message sent successfully with attachments!";
+        echo "Message sent successfully with attachments!"; 
     } catch (Exception $e) {
         echo "Message could not be sent. Error: {$mail->ErrorInfo}";
     }
