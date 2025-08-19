@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $zip    = htmlspecialchars($_POST['zip']); 
     $occupation    = htmlspecialchars($_POST['occupation']);
     $message = htmlspecialchars($_POST['message']);
+    $tearms = htmlspecialchars($_POST['tearms']);
 
     $mail = new PHPMailer(true);
 
@@ -59,8 +60,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $membershipType = isset($_POST['membershipType']) ? $_POST['membershipType'] : 'Not Selected';
 
 
-// Collect radio value
-$department = isset($_POST['interests']) ? $_POST['interests'] : 'Not selected';
+  // Collect radio value
+    $interests = isset($_POST['interests']) ? $_POST['interests'] : 'Not selected';
+
+    
+  // Get checkbox value
+    $policy = isset($_POST['policy']) ? $_POST['policy'] : 'Not Agreed';
+
+// ✅ Capture dropdown selection
+    $howHeard = isset($_POST['howHeard']) ? $_POST['howHeard'] : 'Not Selected';
 
 
         // Email content
@@ -70,7 +78,7 @@ $department = isset($_POST['interests']) ? $_POST['interests'] : 'Not selected';
            
             <div style='font-family: Arial, sans-serif; color: #333;'>
         <h2 style='background: #4CAF50; color: #fff; padding: 10px;'>
-            📩 New Donation Form Submission
+            📩 New Membershup Form Submission
         </h2>
         <table border='1' cellpadding='8' cellspacing='0' width='100%' style='border-collapse: collapse;'>
             <tr>
@@ -118,8 +126,16 @@ $department = isset($_POST['interests']) ? $_POST['interests'] : 'Not selected';
                 <td>$interests</td>
             </tr>
             <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>How did you hear about us?</td>
+                <td>$howHeard</td>
+            </tr>
+            <tr>
                 <td style='background:#f9f9f9; font-weight:bold;'>Message</td>
                 <td>$message</td>
+            </tr>
+            <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>Agree to Policy</td>
+                <td>$policy</td>
             </tr>
             <tr>
                 <td style='background:#f9f9f9; font-weight:bold;'>Attachment</td>
