@@ -104,7 +104,7 @@
                         <form action="php/partner_send_mail.php" method="post" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="orgName" class="form-label">Organization/Individual Name</label>
-                                <input type="text" class="form-control" id="orgName" name="orgName" required>
+                                <input type="text" class="form-control" id="orgName" name="name" required>
                             </div>
                             <div class="mb-3">
                                 <label for="contactPerson" class="form-label">Contact Person</label>
@@ -118,9 +118,13 @@
                                 <label for="phone" class="form-label">Phone Number</label>
                                 <input type="tel" class="form-control" id="phone" name="phone">
                             </div>
+                             <div class="mb-3">
+                                <label for="location" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="location" name="location">
+                            </div>
                             <div class="mb-3">
                                 <label for="photo" class="form-label">Upload Photo (optional)</label>
-                                <input type="file" class="form-control" id="photo" name="photo" accept="image/*">
+                                <input type="file" class="form-control" id="photo" name="attachment" accept="image/*">
                             </div>
                             <div class="mb-3">
                                 <label for="website" class="form-label">Website (optional)</label>
@@ -130,10 +134,10 @@
                                 <label for="partnershipType" class="form-label">Type of Partnership</label>
                                 <select class="form-select" id="partnershipType" name="partnershipType" required>
                                     <option value="">Select...</option>
-                                    <option value="financial">Financial Support</option>
-                                    <option value="program">Program Collaboration</option>
-                                    <option value="volunteer">Volunteering</option>
-                                    <option value="other">Other</option>
+                                    <option value="Financial">Financial Support</option>
+                                    <option value="Program">Program Collaboration</option>
+                                    <option value="Volunteer">Volunteering</option>
+                                    <option value="Other">Other</option>
                                 </select>
                             </div>
                             <div class="mb-3">

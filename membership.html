@@ -200,12 +200,12 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="firstName" class="form-label">First Name *</label>
-                                        <input type="text" class="form-control" id="firstName" required>
+                                        <input type="text" class="form-control" id="firstName" name="firstName" required>
                                         <div class="invalid-feedback">Please provide your first name.</div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="lastName" class="form-label">Last Name *</label>
-                                        <input type="text" class="form-control" id="lastName" required>
+                                        <input type="text" class="form-control" id="lastName" name="lastName" required>
                                         <div class="invalid-feedback">Please provide your last name.</div>
                                     </div>
                                 </div>
@@ -213,33 +213,33 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="email" class="form-label">Email Address *</label>
-                                        <input type="email" class="form-control" id="email" required>
+                                        <input type="email" class="form-control" id="email" name="email" required>
                                         <div class="invalid-feedback">Please provide a valid email address.</div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <label for="phone" class="form-label">Phone Number *</label>
-                                        <input type="tel" class="form-control" id="phone" required>
+                                        <input type="tel" class="form-control" id="phone" name="phone" required>
                                         <div class="invalid-feedback">Please provide your phone number.</div>
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="address" class="form-label">Address</label>
-                                    <input type="text" class="form-control" id="address" placeholder="123 Main St">
+                                    <label for="location" class="form-label">Address</label>
+                                    <input type="text" class="form-control" id="location" name="location" placeholder="123 Main St">
                                 </div>
 
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <label for="city" class="form-label">City</label>
-                                        <input type="text" class="form-control" id="city">
+                                        <input type="text" class="form-control" id="city" name="city">
                                     </div>
                                     <div class="col-md-4 mb-3">
                                         <label for="state" class="form-label">State</label>
-                                        <input type="text" class="form-control" id="state">
+                                        <input type="text" class="form-control" id="state" name="state">
                                     </div>
                                     <div class="col-md-2 mb-3">
                                         <label for="zip" class="form-label">Zip</label>
-                                        <input type="text" class="form-control" id="zip">
+                                        <input type="text" class="form-control" id="zip" name="zip">
                                     </div>
                                 </div>
 
@@ -247,7 +247,7 @@
                                 <h5 class="mb-3 mt-4">Membership Details</h5>
                                 <div class="mb-3">
                                     <label for="membershipType" class="form-label">Membership Type *</label>
-                                    <select class="form-select" id="membershipType" required>
+                                    <select class="form-select" id="membershipType" name="membershipType" required>
                                         <option value="">Choose...</option>
                                         <option value="basic">Basic - $25/month</option>
                                         <option value="premium">Premium - $50/month</option>
@@ -258,36 +258,36 @@
 
                                 <div class="mb-3">
                                     <label for="occupation" class="form-label">Occupation/Profession</label>
-                                    <input type="text" class="form-control" id="occupation" placeholder="e.g., Teacher, Engineer, Entrepreneur">
+                                    <input type="text" class="form-control" id="occupation" name="occupation" placeholder="e.g., Teacher, Engineer, Entrepreneur">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="interests" class="form-label">Areas of Interest</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="education" id="education">
+                                        <input class="form-check-input" type="checkbox" value="education" id="education" name="interests">
                                         <label class="form-check-label" for="education">Education & Training</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="health" id="health">
+                                        <input class="form-check-input" type="checkbox" value="health" id="health" name="interests">
                                         <label class="form-check-label" for="health">Health & Wellness</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="business" id="business">
+                                        <input class="form-check-input" type="checkbox" value="business" id="business" name="interests">
                                         <label class="form-check-label" for="business">Business & Entrepreneurship</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="technology" id="technology">
+                                        <input class="form-check-input" type="checkbox" value="technology" id="technology" name="interests">
                                         <label class="form-check-label" for="technology">Technology</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="leadership" id="leadership">
+                                        <input class="form-check-input" type="checkbox" value="leadership" id="leadership" name="interests">
                                         <label class="form-check-label" for="leadership">Leadership Development</label>
                                     </div>
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="howHeard" class="form-label">How did you hear about us?</label>
-                                    <select class="form-select" id="howHeard">
+                                    <select class="form-select" id="howHeard" name="howHeard">
                                         <option value="">Choose...</option>
                                         <option value="social-media">Social Media</option>
                                         <option value="friend">Friend/Family</option>
@@ -299,15 +299,15 @@
                                 <!-- add image -->
                                  <div class="mb-3">
                                     <label for="image" class="form-label">Upload Image</label>
-                                    <input type="file" class="form-control" id="image" name="image">
+                                    <input type="file" class="form-control" id="image" name="attachment">
                                  </div>
                                 <div class="mb-3">
                                     <label for="message" class="form-label">Additional Comments</label>
-                                    <textarea class="form-control" id="message" rows="3" placeholder="Tell us why you want to join..."></textarea>
+                                    <textarea class="form-control" id="message" name="message" rows="3" placeholder="Tell us why you want to join..."></textarea>
                                 </div>
 
                                 <div class="form-check mb-3">
-                                    <input class="form-check-input" type="checkbox" id="terms" required>
+                                    <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
                                     <label class="form-check-label" for="terms">
                                         I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms and Conditions</a>
                                     </label>

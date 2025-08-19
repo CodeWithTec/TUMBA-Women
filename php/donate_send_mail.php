@@ -10,8 +10,10 @@ require '../PHPMailer/src/Exception.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name    = htmlspecialchars($_POST['name']);
+    $amount    = htmlspecialchars($_POST['amount']);
     $email   = htmlspecialchars($_POST['email']);
-    $subject = htmlspecialchars($_POST['subject']);
+    $location   = htmlspecialchars($_POST['location']);
+    $phone   = htmlspecialchars($_POST['phone']);
     $message = htmlspecialchars($_POST['message']);
 
     $mail = new PHPMailer(true);
@@ -31,31 +33,75 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->addAddress('tumbawomencooperative@gmail.com'); // Recipient email
 
         // Attach all uploaded files
-        if (!empty($_FILES['attachments']['name'][0])) {
-            for ($i = 0; $i < count($_FILES['attachments']['name']); $i++) {
-                if ($_FILES['attachments']['error'][$i] === UPLOAD_ERR_OK) {
-                    $mail->addAttachment(
-                        $_FILES['attachments']['tmp_name'][$i],
-                        $_FILES['attachments']['name'][$i]
-                    );
-                }
-            }
-        }
+        $fileInfo = "No file uploaded";
+       if (isset($_FILES['attachment']) && $_FILES['attachment']['error'] == 0) {
+    $mail->addAttachment($_FILES['attachment']['tmp_name'], $_FILES['attachment']['name']);
+
+     // File details
+    $filename = $_FILES['attachment']['name'];
+    $filesize = round($_FILES['attachment']['size'] / 1024, 2) . " KB";
+    $filetype = $_FILES['attachment']['type'];
+
+    $fileInfo = "
+        <strong>File Name:</strong> $filename<br>
+        <strong>File Size:</strong> $filesize<br>
+        <strong>File Type:</strong> $filetype
+    ";
+} else {
+    echo "⚠️ File not uploaded. Error code: " . $_FILES['attachment']['error'];
+}
+
+  // ✅ Capture dropdown selection
+    $currency = isset($_POST['currency']) ? $_POST['currency'] : 'Not Selected';
 
         // Email content
         $mail->isHTML(true);
-        $mail->Subject = "New Contact Form Submission";
+        $mail->Subject = "Donation Form";
         $mail->Body    = "
-            <h3>New Message from <br>$name</h3>
-            <h3>Subject of the Mail:<br>$subject</h3>
-            <p><strong>Email:</strong> $email</p>
-            <p><strong>Message:</strong><br>$message</p>
-        ";
-
+           
+            <div style='font-family: Arial, sans-serif; color: #333;'>
+        <h2 style='background: #4CAF50; color: #fff; padding: 10px;'>
+            📩 New Donation Form Submission
+        </h2>
+        <table border='1' cellpadding='8' cellspacing='0' width='100%' style='border-collapse: collapse;'>
+            <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>Full Name</td>
+                <td>$name</td>
+            </tr>
+            <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>Email</td>
+                <td>$email</td>
+            </tr>
+            <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>Phone</td>
+                <td>$phone</td>
+            </tr>
+            <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>Amount</td>
+                <td>$amount</td>
+            </tr>
+             <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>currency</td>
+                <td>$currency</td>
+            </tr>
+            <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>Message</td>
+                <td>$message</td>
+            </tr>
+            <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>Attachment</td>
+                <td>$fileInfo</td>
+            </tr>
+        </table>
+        <p style='margin-top:20px; font-size:12px; color:#777;'>
+            This message was sent from your website contact form.
+        </p>
+    </div>
+";
         // Send email
         $mail->send();
         // Reirect after success 
-        header("Location: /successfully.html");
+        header("Location: ../successfully.html");
     } catch (Exception $e) {
         echo "Message could not be sent. Error: {$mail->ErrorInfo}";
     }
