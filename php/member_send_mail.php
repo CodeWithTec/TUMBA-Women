@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $location   = htmlspecialchars($_POST['location']);
     $city    = htmlspecialchars($_POST['city']);
     $state    = htmlspecialchars($_POST['state']);
-    $zip    = htmlspecialchars($_POST['zip']);
+    $zip    = htmlspecialchars($_POST['zip']); 
     $occupation    = htmlspecialchars($_POST['occupation']);
     $message = htmlspecialchars($_POST['message']);
 
@@ -56,11 +56,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
   // ✅ Capture dropdown selection
-    $currency = isset($_POST['membershipType']) ? $_POST['membershipType'] : 'Not Selected';
+    $membershipType = isset($_POST['membershipType']) ? $_POST['membershipType'] : 'Not Selected';
+
+
+// Collect radio value
+$department = isset($_POST['interests']) ? $_POST['interests'] : 'Not selected';
+
 
         // Email content
         $mail->isHTML(true);
-        $mail->Subject = "Donation Form";
+        $mail->Subject = "Membership Form";
         $mail->Body    = "
            
             <div style='font-family: Arial, sans-serif; color: #333;'>
@@ -69,8 +74,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </h2>
         <table border='1' cellpadding='8' cellspacing='0' width='100%' style='border-collapse: collapse;'>
             <tr>
-                <td style='background:#f9f9f9; font-weight:bold;'>Full Name</td>
-                <td>$name</td>
+                <td style='background:#f9f9f9; font-weight:bold;'>First Name</td>
+                <td>$firstName</td>
+            </tr>
+            <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>Last Name</td>
+                <td>$lastName</td>
             </tr>
             <tr>
                 <td style='background:#f9f9f9; font-weight:bold;'>Email</td>
@@ -81,12 +90,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <td>$phone</td>
             </tr>
             <tr>
-                <td style='background:#f9f9f9; font-weight:bold;'>Amount</td>
-                <td>$amount</td>
+                <td style='background:#f9f9f9; font-weight:bold;'>Location</td>
+                <td>$location</td>
             </tr>
              <tr>
-                <td style='background:#f9f9f9; font-weight:bold;'>currency</td>
-                <td>$currency</td>
+                <td style='background:#f9f9f9; font-weight:bold;'>City</td>
+                <td>$city</td>
+            </tr>
+            <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>State</td>
+                <td>$state</td>
+            </tr>
+            <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>Zip</td>
+                <td>$zip</td>
+            </tr>
+             <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>Membership Type</td>
+                <td>$membershipType</td>
+            </tr>
+             <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>Occupation</td>
+                <td>$occupation</td>
+            </tr>
+             <tr>
+                <td style='background:#f9f9f9; font-weight:bold;'>Interest</td>
+                <td>$interests</td>
             </tr>
             <tr>
                 <td style='background:#f9f9f9; font-weight:bold;'>Message</td>
@@ -98,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </tr>
         </table>
         <p style='margin-top:20px; font-size:12px; color:#777;'>
-            This message was sent from your website contact form.
+            This message was sent from your website membership form.
         </p>
     </div>
 ";
