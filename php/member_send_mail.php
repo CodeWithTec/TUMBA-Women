@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
            
             <div style='font-family: Arial, sans-serif; color: #333;'>
         <h2 style='background: #4CAF50; color: #fff; padding: 10px;'>
-            📩 New Membershup Form Submission
+            👤 New Membershup Form Submission
         </h2>
         <table border='1' cellpadding='8' cellspacing='0' width='100%' style='border-collapse: collapse;'>
             <tr>
