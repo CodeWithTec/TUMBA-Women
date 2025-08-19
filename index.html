@@ -590,7 +590,7 @@
         </div>
         <div class="row g-4">
             <div class="col-md-6">
-                <form class="contact-form" action="#" method="post">
+                <form class="contact-form" action="php/contact_send_mail.php" method="post" enctype="multipart/form-data">
                     <div class="mb-3">
                         <label for="name" class="form-label">Your Name</label>
                         <input type="text" class="form-control" id="name" name="name" required>
@@ -606,6 +606,11 @@
                     <div class="mb-3">
                         <label for="message" class="form-label">Message</label>
                         <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                    </div>
+                     <div class="mb-2">
+                      <label for="file-attached">
+                        <input type="file" name="attachment" id="file-attached" rows="5" class="form-control">
+                      </label>
                     </div>
                     <button type="submit" class="btn btn-success">Send Message</button>
                 </form>
