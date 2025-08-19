@@ -8,6 +8,10 @@
       toggler.classList.toggle('active');
     });
 
+// close the navbar by clicking the x sign 
+
+
+
     // Optional: Remove active class when menu is closed by clicking outside or resizing
     navbarCollapse.addEventListener('hidden.bs.collapse', () => {
       toggler.classList.remove('active');
