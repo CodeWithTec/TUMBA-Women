@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // echo "thanks for the mail";
         // Reirect after success 
-        header("Location: ../successfully.html");
+        header("Location: ../success_contact.html");
     } catch (Exception $e) {
         echo "Message could not be sent. Error: {$mail->ErrorInfo}";
     }

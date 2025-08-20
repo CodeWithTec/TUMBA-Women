@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Send email
         $mail->send();
         // Reirect after success 
-        header("Location: ../successfully.html");
+        header("Location: ../success_donate.html");
     } catch (Exception $e) {
         echo "Message could not be sent. Error: {$mail->ErrorInfo}";
     }
