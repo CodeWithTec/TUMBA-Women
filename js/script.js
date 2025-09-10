@@ -9,8 +9,9 @@
     });
 
 // close the navbar by clicking the x sign 
-
-
+    navbarCollapse.addEventListener('shown.bs.collapse', () => {
+      toggler.classList.add('active');
+    });
 
     // Optional: Remove active class when menu is closed by clicking outside or resizing
     navbarCollapse.addEventListener('hidden.bs.collapse', () => {

@@ -61,7 +61,7 @@
       top: 26px;
     }
 
-    /* Toggler hover effect */
+    /* Toggler hover effect
     .navbar-toggler:hover .bar1 {
       transform: rotate(45deg);
       top: 13px;
@@ -70,7 +70,7 @@
       opacity: 40;
       left: -20px;
     }
-   
+    */
 
     /* Toggler active (menu open) animation */
     .navbar-toggler.active .bar1 {
